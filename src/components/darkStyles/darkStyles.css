@@ -1,0 +1,190 @@
+:root {
+  --font-family-japanese: "Hiragino Mincho Pro", "HGS明朝E", "MS PMincho", serif;
+  --font-size-base: 20px;
+  --line-height-base: 1.5;
+  --letter-spacing: 2px;
+  --gap: 80px;
+  --padding-vertical: 20px;
+  --padding-horizontal: 10px;
+  --min-height: 500px;
+  --animation-shake-slow: shake-slow 8s infinite;
+  --animation-shake-slow-shorter: shake-slow 6s infinite;
+  --animation-shake-horizontal: shake-horizontal 3s infinite;
+  
+  /* Variables para pantallas grandes */
+  --font-size-large: 28px;
+  --font-size-xlarge: 34px;
+  --gap-large: 120px;
+  --gap-xlarge: 150px;
+  --padding-vertical-large: 40px;
+  --padding-horizontal-large: 20px;
+  --min-height-large: 650px;
+  --min-height-xlarge: 800px;
+  
+  /* Variables NUEVAS para pantallas pequeñas */
+  --font-size-small: 18px;
+  --font-size-xsmall: 16px;
+  --font-size-mobile: 14px;
+  --gap-small: 60px;
+  --gap-xsmall: 40px;
+  --padding-vertical-small: 15px;
+  --padding-horizontal-small: 8px;
+  --letter-spacing-small: 1.5px;
+}
+
+.griffith-container {
+  padding: 20px;
+  background-color: #d6d5d5;
+  background-image: url('../assets/fotos/Griffith.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 450px; 
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.dark-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  padding: var(--padding-vertical) 0;
+}
+
+.dark-text, .dark-text1 {
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  margin: 0;
+  font: var(--font-size-base)/var(--line-height-base) var(--font-family-japanese);
+  width: auto;
+  min-height: var(--min-height);
+  text-align: center;
+  letter-spacing: var(--letter-spacing);
+  padding: var(--padding-vertical) var(--padding-horizontal);
+}
+
+.dark-text {
+  animation: var(--animation-shake-slow);
+}
+
+.dark-text1 {
+  animation: var(--animation-shake-slow-shorter);
+}
+
+/* Media queries para pantallas grandes */
+@media screen and (min-width: 1200px) {
+  .griffith-container {
+    padding: 40px;
+    background-size: 600px; /* Imagen de fondo más grande */
+  }
+  
+  .dark-wrapper {
+    gap: var(--gap-large);
+    padding: var(--padding-vertical-large) 0;
+  }
+  
+  .dark-text, .dark-text1 {
+    font-size: var(--font-size-large);
+    min-height: var(--min-height-large);
+    padding: var(--padding-vertical-large) var(--padding-horizontal-large);
+    letter-spacing: 3px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .griffith-container {
+    padding: 60px;
+    background-size: 750px; /* Imagen aún más grande */
+  }
+  
+  .dark-wrapper {
+    gap: var(--gap-xlarge);
+    padding: 60px 0;
+  }
+  
+  .dark-text, .dark-text1 {
+    font-size: var(--font-size-xlarge);
+    min-height: var(--min-height-xlarge);
+    padding: 40px 20px;
+    letter-spacing: 4px;
+  }
+}
+
+/* Media queries NUEVAS para pantallas pequeñas */
+@media screen and (max-width: 1024px) {
+  .dark-text, .dark-text1 {
+    font-size: var(--font-size-small);
+    letter-spacing: var(--letter-spacing-small);
+  }
+  
+  .dark-wrapper {
+    gap: var(--gap-small);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .dark-text, .dark-text1 {
+    font-size: var(--font-size-xsmall);
+    padding: var(--padding-vertical-small) var(--padding-horizontal-small);
+  }
+  
+  .dark-wrapper {
+    gap: var(--gap-xsmall);
+  }
+  
+  .griffith-container {
+    background-size: 350px; /* Imagen más pequeña */
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas (tablets y móviles) */
+@media screen and (max-width: 768px) {
+  .dark-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .dark-text, .dark-text1 {
+    -webkit-writing-mode: horizontal-tb;
+    writing-mode: horizontal-tb;
+    min-height: auto;
+    padding: 15px 5px;
+    font-size: var(--font-size-mobile);
+    letter-spacing: 1px;
+  }
+  
+  .griffith-container {
+    background-size: 250px; /* Imagen aún más pequeña para móviles */
+    background-position: right 90% bottom; /* Mejor posición para móviles */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dark-text, .dark-text1 {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  
+  .griffith-container {
+    background-size: 200px;
+    padding: 15px;
+  }
+  
+  .dark-wrapper {
+    gap: 30px;
+  }
+}
+
+@keyframes shake-horizontal {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+@keyframes shake-slow {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-6px); }
+  50% { transform: translateY(2px); }
+  75% { transform: translateY(-3px); }
+}

@@ -1,0 +1,13 @@
+@import url('./darkStyles.css');
+
+.darkTooLate-container {
+  padding: 20px;
+  background-color: #000;
+  background-image: url('../../assets/fotos/gon.gif');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 350px; 
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+

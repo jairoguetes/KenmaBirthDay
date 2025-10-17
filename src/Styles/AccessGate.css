@@ -1,0 +1,180 @@
+:root { 
+  --color-primary: #4cc9f0;
+  --color-primary-hover: #3ab0d8;
+  --color-error: #f72585;
+  --color-text-light: white;
+  --bg-space-gradient: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  --bg-form: rgba(191, 189, 189, 0.1);
+  --bg-input: rgba(0, 0, 0, 0.4);
+  --blur-effect: blur(5px);
+  --box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  --box-shadow-focus: 0 0 0 2px rgba(76, 201, 240, 0.3);
+  --font-family: 'Noto Sans JP', sans-serif;
+  --font-size-base: 1rem;
+  --font-size-heading: 1.5rem;
+  --font-size-error: 0.85rem;  
+  --padding-container: 2rem;
+  --padding-input: 12px 15px;
+  --gap-elements: 12px;
+  --gap-mobile: 8px;  
+  --max-width-form: 350px;
+  --input-height: 48px;
+  --border-radius: 6px;
+  --border-radius-container: 12px;  
+  --animation-stars-duration: 50s;
+  --animation-twinkle-duration: 5s;
+}
+
+.access-gate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--bg-space-gradient);
+  font-family: var(--font-family);
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  animation: moveStars var(--animation-stars-duration) linear infinite;
+}
+
+.star {
+  position: absolute;
+  background-color: var(--color-text-light);
+  border-radius: 50%;
+  animation: twinkle var(--animation-twinkle-duration) infinite ease-in-out;
+  opacity: 0.8;
+  will-change: transform, opacity;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes moveStars {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100vh); }
+}
+
+.access-container {
+  background: var(--bg-form);
+  backdrop-filter: var(--blur-effect);
+  padding: var(--padding-container);
+  border-radius: var(--border-radius-container);
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  max-width: var(--max-width-form);
+  z-index: 10;
+  position: relative;
+}
+
+.access-container h1 {
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-size: var(--font-size-heading);
+  position: relative;
+  text-align: center;
+}
+
+.access-container h1::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+.access-container form {
+  width: 100%;
+}
+
+.access-container form > div {
+  display: flex;
+  gap: var(--gap-elements);
+  width: 100%;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.access-container input {
+  flex: 1 1 200px;
+  min-width: 0;
+  padding: var(--padding-input);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius);
+  background: var(--bg-input);
+  color: var(--color-text-light);
+  font-size: var(--font-size-base);
+  height: var(--input-height);
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.access-container input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: var(--box-shadow-focus);
+}
+
+.access-container button {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  padding: 0 24px;
+  border-radius: var(--border-radius);
+  height: var(--input-height);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.access-container button:hover {
+  background: var(--color-primary-hover);
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: var(--font-size-error);
+  text-align: left;
+  width: 100%;
+  display: block;
+  padding-left: 2px;
+  margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+  .access-container form > div {
+    flex-direction: column;
+    gap: var(--gap-mobile);
+  }
+  
+  .access-container input,
+  .access-container button {
+    width: 100%;
+  }
+  
+  .error-message {
+    text-align: center;
+    padding-left: 0;
+  }
+}

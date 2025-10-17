@@ -1,0 +1,59 @@
+@import url('./darkStyles.css');
+
+:root {
+  /* Variables para tamaños de imagen responsivos */
+  --bg-size-xlarge: 450px;    /* Para pantallas muy grandes */
+  --bg-size-large: 350px;     /* Para pantallas grandes (valor por defecto) */
+  --bg-size-medium: 280px;    /* Para pantallas medianas */
+  --bg-size-small: 220px;     /* Para pantallas pequeñas */
+  --bg-size-mobile: 180px;    /* Para móviles */
+  --bg-size-xmobile: 150px;   /* Para móviles muy pequeños */
+}
+
+.darkguts-container {
+  padding: 20px;
+  background-color: #000;
+  background-image: url('../../assets/fotos/guts.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: var(--bg-size-large); 
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Pantallas muy grandes */
+@media screen and (min-width: 1800px) {
+  .darkguts-container {
+    background-size: var(--bg-size-xlarge);
+  }
+}
+
+/* Pantallas medianas */
+@media screen and (max-width: 1200px) {
+  .darkguts-container {
+    background-size: var(--bg-size-medium);
+  }
+}
+
+/* Tablets y pantallas pequeñas */
+@media screen and (max-width: 900px) {
+  .darkguts-container {
+    background-size: var(--bg-size-small);
+  }
+}
+
+/* Móviles */
+@media screen and (max-width: 768px) {
+  .darkguts-container {
+    background-size: var(--bg-size-mobile);
+    background-position: left 90% bottom;
+  }
+}
+
+/* Móviles muy pequeños */
+@media screen and (max-width: 480px) {
+  .darkguts-container {
+    background-size: var(--bg-size-xmobile);
+    padding: 15px;
+  }
+}

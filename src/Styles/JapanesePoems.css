@@ -1,0 +1,29 @@
+
+.poems-container {
+  padding: 20px;
+  background: #f0ece3 url('http://www.webcreatorbox.com/sample/images/ume.jpg') no-repeat left bottom;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.poems-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  padding: 20px 0;
+}
+
+.poem-text {
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  margin: 0;
+  font: 20px/1.5 "Hiragino Mincho Pro", "HGS明朝E", "MS PMincho", serif;
+  width: auto;
+  min-height: 500px;
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 20px 10px;
+
+}

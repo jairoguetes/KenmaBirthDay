@@ -1,0 +1,206 @@
+:root {
+             --griffith-bg-size-xlarge: 300px;    /* Reducido de 750px */
+             --griffith-bg-size-large: 280px;     /* Reducido de 600px */
+             --griffith-bg-size-default: 200px;   /* Reducido de 450px */
+             --griffith-bg-size-medium: 150px;    /* Reducido de 350px */
+             --griffith-bg-size-small: 100px;     /* Reducido de 280px */
+             --griffith-bg-size-mobile: 90px;    /* Reducido de 220px */
+    
+            
+            --bg-color: #d6d5d5;
+            --text-color: #333;
+            --accent-color: #8a0000;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #f0f0f0;
+        }
+
+       .griffith-container {
+    padding: 20px;
+    background-color: var(--bg-color);
+    background-image: url('../assets/fotos/Griffith.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: var(--griffith-bg-size-default); 
+    min-height: 60vh;
+    box-sizing: border-box;
+    transition: background-size 0.3s ease;
+}
+        .griffith-wrapper {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 80px;
+            padding: 20px 0;
+        }
+
+        .griffith-text, .poem-text {
+            -webkit-writing-mode: vertical-rl;
+            writing-mode: vertical-rl;
+            margin: 0;
+            font: 20px/1.5 "Hiragino Mincho Pro", "HGS明朝E", "MS PMincho", serif;
+            width: auto;
+            min-height: 500px;
+            text-align: center;
+            letter-spacing: 2px;
+            padding: 20px 10px;
+            background-color: transparent;
+            
+        }
+
+        .content-box {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .instructions {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .instructions h2 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .instructions ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .size-indicator {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            z-index: 1000;
+        }
+
+        /* Media queries para pantallas grandes */
+        @media screen and (min-width: 1200px) {
+            .griffith-container {
+                padding: 40px;
+                background-size: var(--griffith-bg-size-large);
+            }
+            
+            .griffith-wrapper {
+                gap: 120px;
+                padding: 40px 0;
+            }
+            
+            .griffith-text, .poem-text {
+                font-size: 28px;
+                min-height: 650px;
+                padding: 30px 15px;
+                letter-spacing: 3px;
+            }
+        }
+
+        @media screen and (min-width: 1600px) {
+            .griffith-container {
+                padding: 60px;
+                background-size: var(--griffith-bg-size-xlarge);
+            }
+            
+            .griffith-wrapper {
+                gap: 150px;
+                padding: 60px 0;
+            }
+            
+            .griffith-text, .poem-text {
+                font-size: 34px;
+                min-height: 800px;
+                padding: 40px 20px;
+                letter-spacing: 4px;
+            }
+        }
+
+        /* Media queries para pantallas más pequeñas */
+        @media screen and (max-width: 1024px) {
+            .griffith-container {
+                background-size: var(--griffith-bg-size-medium);
+            }
+        }
+
+        @media screen and (max-width: 900px) {
+            .griffith-container {
+                background-size: var(--griffith-bg-size-small);
+            }
+        }
+
+        /* Ajustes para pantallas muy pequeñas (móviles) */
+        @media screen and (max-width: 768px) {
+            .griffith-container {
+                background-size: var(--griffith-bg-size-mobile);
+                background-position: right 0% bottom;
+            }
+            
+            .griffith-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            
+            .griffith-text, .poem-text {
+                -webkit-writing-mode: horizontal-tb;
+                writing-mode: horizontal-tb;
+                min-height: auto;
+                padding: 15px 5px;
+                font-size: 18px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Ajustes adicionales para móviles muy pequeños */
+        @media screen and (max-width: 480px) {
+            .griffith-container {
+                padding: 15px;
+                background-size: 180px;
+            }
+            
+            .griffith-text, .poem-text {
+                font-size: 16px;
+                padding: 10px;
+            }
+          }

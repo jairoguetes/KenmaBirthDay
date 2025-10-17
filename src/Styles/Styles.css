@@ -1,0 +1,36 @@
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+
+.light-theme .theme-toggle {
+  background: transparent;
+  color: #000;
+}
+
+.dark-theme .theme-toggle {
+  background: transparent;
+  color: #fff;
+}
+
+.App {
+  min-height: 100vh;
+  transition: background 0.3s ease;
+}
+
+.light-theme {
+  background: #fff;
+  color: #000;
+}
+
+.dark-theme {
+  background: #000;
+  color: #fff;
+}
