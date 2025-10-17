@@ -28,9 +28,9 @@ cd KenmaBirthDay
 
 You need to download all the necessary project dependencies:
 
-```bash
+
 npm install
 
  3. Run 
-```bash
+
 npm run dev
